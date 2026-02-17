@@ -10,7 +10,7 @@ RUN apt-get update \
     && dpkg -i wkhtmltox_0.12.6-1.bookworm_amd64.deb || true \
     && apt-get -f install -y \
     && rm -f wkhtmltox_0.12.6-1.bookworm_amd64.deb \
-    && pip3 install --no-cache-dir qifparse \
+    && python3 -m pip install --no-cache-dir --break-system-packages qifparse \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
