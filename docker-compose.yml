@@ -15,7 +15,10 @@ services:
       - app_network
 
   odoo:
-    image: odoo:18.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: odoo:18.0-custom
     container_name: odoo_app_18
     restart: always
     depends_on:
